@@ -6,7 +6,7 @@ public class DiceApplication {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner userInput = new Scanner(System.in);
         System.out.println("Welcome to the dice application for Prisons and Lizards");
         System.out.println("====-_  _-====___\n" +
                 "           _--^^^#####//      \\\\#####^^^--_\n" +
@@ -28,14 +28,20 @@ public class DiceApplication {
 
         System.out.println("Please use only whole numbers.    ");
         System.out.print("How many dice would you like to roll?  ");
-        int numberOfDice = Integer.parseInt(scanner.nextLine());
+        String diceQtyInput = userInput.nextLine();
+        int numberOfDice = Integer.parseInt(diceQtyInput);
 
         System.out.print("How many sides do we need?   ");
-        int sidesToDice = Integer.parseInt(scanner.nextLine());
+        String manySidesOfDice = userInput.nextLine();
+        int sidesToDice = Integer.parseInt(manySidesOfDice);
 
         System.out.print("What is your modifier?  Please include the + or - (example: +4 or -2):   ");
-        int skillModifier = Integer.parseInt(scanner.nextLine());
+        String plusOrMinusSkill = userInput.nextLine();
+        int skillModifier = Integer.parseInt(plusOrMinusSkill);
 
+        int rollResult = numberOfDice * sidesToDice + skillModifier;
+
+        System.out.println("You rolled:  " + rollResult);
 
 
     }
