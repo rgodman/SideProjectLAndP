@@ -53,13 +53,15 @@ public class DiceApplication {
             }
         }
 
+        int rollResult = 0;
+        for (int side : listOfSides) {
+            int totalWithModifier = side + skillModifier;
+            rollResult += totalWithModifier;
 
-        for (Integer listOfSide : listOfSides) {
-            int rollResult = listOfSide + skillModifier;
-
-            System.out.println("You rolled:  " +
-                    "" + rollResult + "   Dice results: " + listOfSides + " + " +  " " + skillModifier);
         }
+
+        System.out.println("You rolled:  " +
+                "" + rollResult + "   Dice results: " + listOfSides + " + " +  " " + skillModifier);
 
 
 
