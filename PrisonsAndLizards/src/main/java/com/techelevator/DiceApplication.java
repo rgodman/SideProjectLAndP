@@ -37,17 +37,18 @@ public class DiceApplication {
 
         System.out.print("How many sides do we need?   ");
         String manySidesOfDice = userInput.nextLine();
-        int sidesToDice = random.nextInt(Integer.parseInt(manySidesOfDice)) + 1;
+        int sidesToDice = random.nextInt(1, Integer.parseInt(manySidesOfDice)) + 1;
 
 
 
         System.out.print("What is your modifier?  Please include the + or - (example: +4 or -2):   ");
         String plusOrMinusSkill = userInput.nextLine();
         int skillModifier = Integer.parseInt(plusOrMinusSkill);
+
         List<Integer> listOfSides = new ArrayList<>();
-        if (Integer.parseInt(diceQtyInput) >= 2) {
-            for (int i = 0; i <= Integer.parseInt(diceQtyInput); i++) {
-                int newRandomNumber = random.nextInt(Integer.parseInt(manySidesOfDice));
+        if (Integer.parseInt(diceQtyInput) >= 1) {
+            for (int i = 0; i < Integer.parseInt(diceQtyInput); i++) {
+                int newRandomNumber = random.nextInt(1,Integer.parseInt(manySidesOfDice) +1);
                 listOfSides.add(newRandomNumber);
             }
         }
@@ -57,7 +58,7 @@ public class DiceApplication {
             int rollResult = listOfSide + skillModifier;
 
             System.out.println("You rolled:  " +
-                    "" + rollResult + "   results: " + "(" + sidesToDice + "+" + skillModifier + ")");
+                    "" + rollResult + "   Dice results: " + listOfSides + " + " +  " " + skillModifier);
         }
 
 
@@ -69,5 +70,9 @@ public class DiceApplication {
 
 
     }
+
+//}
+//
+//class Demo {
 
 }
