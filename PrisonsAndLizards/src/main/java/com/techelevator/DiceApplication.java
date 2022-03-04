@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -42,11 +44,27 @@ public class DiceApplication {
         System.out.print("What is your modifier?  Please include the + or - (example: +4 or -2):   ");
         String plusOrMinusSkill = userInput.nextLine();
         int skillModifier = Integer.parseInt(plusOrMinusSkill);
+        List<Integer> listOfSides = new ArrayList<>();
+        if (Integer.parseInt(diceQtyInput) >= 2) {
+            for (int i = 0; i <= Integer.parseInt(diceQtyInput); i++) {
+                int newRandomNumber = random.nextInt(Integer.parseInt(manySidesOfDice));
+                listOfSides.add(newRandomNumber);
+            }
+        }
 
-        int rollResult = numberOfDice * sidesToDice + skillModifier;
 
-        System.out.println("You rolled:  " +
-                "" + rollResult + "   results: " + "(" + sidesToDice + "+" + skillModifier + ")");
+        for (Integer listOfSide : listOfSides) {
+            int rollResult = listOfSide + skillModifier;
+
+            System.out.println("You rolled:  " +
+                    "" + rollResult + "   results: " + "(" + sidesToDice + "+" + skillModifier + ")");
+        }
+
+
+
+
+
+
 
 
 
