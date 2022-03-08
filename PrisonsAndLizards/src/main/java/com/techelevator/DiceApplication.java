@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class DiceApplication {
 
-    public static void main(String[] args) throws IllegalArgumentException {
+    public static void rollDice(){
         Scanner userInput = new Scanner(System.in);
         System.out.println("Welcome to the dice application for Prisons and Lizards");
         System.out.println("""
@@ -48,7 +48,7 @@ public class DiceApplication {
 
         while (Integer.parseInt(manySidesOfDice) <= 1) {
             System.out.println("ERROR There has to be at least 2 sides!");
-            System.out.print("How many sides do we need?   ");
+            System.out.println("How many sides do we need?   ");
             manySidesOfDice = userInput.nextLine();
         }
 
@@ -96,48 +96,66 @@ public class DiceApplication {
                 break;
             } else {
                 if (numberOfDice == 1 && (side == 20)) {
-                    System.out.println("                            ==(W{==========-      /===-                        \n" +
-                            "                              ||  (.--.)         /===-_---~~~~~~~~~------____  \n" +
-                            "                              | \\_,|**|,__      |===-~___                _,-' `\n" +
-                            "                 -==\\\\        `\\ ' `--'   ),    `//~\\\\   ~~~~`---.___.-~~      \n" +
-                            "             ______-==|        /`\\_. .__/\\ \\    | |  \\\\           _-~`         \n" +
-                            "       __--~~~  ,-/-==\\\\      (   | .  |~~~~|   | |   `\\        ,'             \n" +
-                            "    _-~       /'    |  \\\\     )__/==0==-\\<>/   / /      \\      /               \n" +
-                            "  .'        /       |   \\\\      /~\\___/~~\\/  /' /        \\   /'                \n" +
-                            " /  ____  /         |    \\`\\.__/-~~   \\  |_/'  /          \\/'                  \n" +
-                            "/-'~    ~~~~~---__  |     ~-/~         ( )   /'        _--~`                   \n" +
-                            "                  \\_|      /        _) | ;  ),   __--~~                        \n" +
-                            "                    '~~--_/      _-~/- |/ \\   '-~ \\                            \n" +
-                            "                   {\\__--_/}    / \\\\_>-|)<__\\      \\                           \n" +
-                            "                   /'   (_/  _-~  | |__>--<__|      |                          \n" +
-                            "                  |   _/) )-~     | |__>--<__|      |                          \n" +
-                            "                  / /~ ,_/       / /__>---<__/      |                          \n" +
-                            "                 o-o _//        /-~_>---<__-~      /                           \n" +
-                            "                 (^(~          /~_>---<__-      _-~                            \n" +
-                            "                ,/|           /__>--<__/     _-~                               \n" +
-                            "             ,//('(          |__>--<__|     /  NATURAL 20 YO!  .----_          \n" +
-                            "            ( ( '))          |__>--<__|    |                 /' _---_~\\        \n" +
-                            "         `-)) )) (           |__>--<__|    |               /'  /     ~\\`\\      \n" +
-                            "        ,/,'//( (             \\__>--<__\\    \\            /'  //        ||      \n" +
-                            "      ,( ( ((, ))              ~-__>--<_~-_  ~--____---~' _/'/        /'       \n" +
-                            "    `~/  )` ) ,/|                 ~-_~>--<_/-__       __-~ _/                  \n" +
-                            "  ._-~//( )/ )) `                    ~~-'_/_/ /~~~~~~~__--~                    \n" +
-                            "   ;'( ')/ ,)(                              ~~~~~~~~~~                         \n" +
-                            "  ' ') '( (/                                                                   \n" +
-                            "    '   '  `");
+                    System.out.println("""
+                                                        ==(W{==========-      /===-                       \s
+                                                          ||  (.--.)         /===-_---~~~~~~~~~------____ \s
+                                                          | \\_,|**|,__      |===-~___                _,-' `
+                                             -==\\\\        `\\ ' `--'   ),    `//~\\\\   ~~~~`---.___.-~~     \s
+                                         ______-==|        /`\\_. .__/\\ \\    | |  \\\\           _-~`        \s
+                                   __--~~~  ,-/-==\\\\      (   | .  |~~~~|   | |   `\\        ,'            \s
+                                _-~       /'    |  \\\\     )__/==0==-\\<>/   / /      \\      /              \s
+                              .'        /       |   \\\\      /~\\___/~~\\/  /' /        \\   /'               \s
+                             /  ____  /         |    \\`\\.__/-~~   \\  |_/'  /          \\/'                 \s
+                            /-'~    ~~~~~---__  |     ~-/~         ( )   /'        _--~`                  \s
+                                              \\_|      /        _) | ;  ),   __--~~                       \s
+                                                '~~--_/      _-~/- |/ \\   '-~ \\                           \s
+                                               {\\__--_/}    / \\\\_>-|)<__\\      \\                          \s
+                                               /'   (_/  _-~  | |__>--<__|      |                         \s
+                                              |   _/) )-~     | |__>--<__|      |                         \s
+                                              / /~ ,_/       / /__>---<__/      |                         \s
+                                             o-o _//        /-~_>---<__-~      /                          \s
+                                             (^(~          /~_>---<__-      _-~                           \s
+                                            ,/|           /__>--<__/     _-~                              \s
+                                         ,//('(          |__>--<__|     /  NATURAL 20 YO!  .----_         \s
+                                        ( ( '))          |__>--<__|    |                 /' _---_~\\       \s
+                                     `-)) )) (           |__>--<__|    |               /'  /     ~\\`\\     \s
+                                    ,/,'//( (             \\__>--<__\\    \\            /'  //        ||     \s
+                                  ,( ( ((, ))              ~-__>--<_~-_  ~--____---~' _/'/        /'      \s
+                                `~/  )` ) ,/|                 ~-_~>--<_/-__       __-~ _/                 \s
+                              ._-~//( )/ )) `                    ~~-'_/_/ /~~~~~~~__--~                   \s
+                               ;'( ')/ ,)(                              ~~~~~~~~~~                        \s
+                              ' ') '( (/                                                                  \s
+                                '   '  `""");
                     break;
                 }
 
             }
 
         }
+        restartGame();
 
+
+    }
+
+    public static void restartGame (){
+        Scanner userInput = new Scanner(System.in);
         System.out.println("Would you like to roll again?    Y/y or N/n  ");
-        userInput.next();
-        if(userInput.nextLine().equals("Y") || userInput.nextLine().equals("y")){
-            System.out.println("Let's roll!");
-
+        String userAnswer = userInput.nextLine();
+        while (!userAnswer.equalsIgnoreCase("N") && !userAnswer.equalsIgnoreCase("Y")) {
+            System.out.println("ERROR Please answer with Y/y or N/n");
+            System.out.println("Would you like to roll again?    Y/y or N/n  ");
+            userAnswer = userInput.nextLine();
         }
+        if(userAnswer.equalsIgnoreCase("Y")){
+            System.out.println("Let's roll!");
+            rollDice();
+        } else if (userAnswer.equalsIgnoreCase("N")) {
+            System.out.println("Thanks for playing!");
+        }
+    }
+
+    public static void main(String[] args) {
+        rollDice();
     }
 
 }
